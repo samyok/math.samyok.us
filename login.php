@@ -24,9 +24,6 @@ if(isset($_POST['name'])){
 						echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
 					}
 				} else {
-					echo "0 results";
-				}
-		} else {
 			if (!in_array($_POST['name'], $_SESSION['names'])) {
 				if(isset($_SESSION['names'])){$_SESSION['names'] = array();}
 				$_SESSION['names']=array_push( $_SESSION['names'], $name);
