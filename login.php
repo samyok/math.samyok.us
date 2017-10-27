@@ -3,17 +3,29 @@ include 'assets/php/common.php';
 $name = NULL;
 if(isset($_POST['name'])){
 	$name = htmlspecialchars($_POST['name']);
-		// Create connection
-		$conn = new mysqli("localhost", "root", "samyok", "samyokOnline");
+				$servername = "localhost";
+				$username = "root";
+				$password = "samyok";
+				$dbname = "samyokOnline";
 
-		// Check connection
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-		} 
-		echo "Connected successfully";
-		$sql=mysql_query("SELECT * FROM 2017_HALLOWEEN_AMC_8 WHERE username=$_POST['name']");
-		if(mysql_num_rows($sql)>=1){
-			echo"name already exists";
+				// Create connection
+				$conn = new mysqli($servername, $username, $password, $dbname);
+				// Check connection
+				if ($conn->connect_error) {
+					die("E_Connection failed: " . $conn->connect_error);
+				} 
+
+				$sql = "SELECT * FROM 2017_HALLOWEEN_AMC_8 WHERE name='$name'";
+				$result = $conn->query($sql);
+
+				if ($result->num_rows > 0) {
+					// output data of each row
+					while($row = $result->fetch_assoc()) {
+						echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+					}
+				} else {
+					echo "0 results";
+				}
 		} else {
 			if (!in_array($_POST['name'], $_SESSION['names'])) {
 				if(isset($_SESSION['names'])){$_SESSION['names'] = array();}
