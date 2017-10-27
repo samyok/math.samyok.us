@@ -30,6 +30,7 @@ if(isset($_POST['name'])){
 				}
 			} else {
 				$_SESSION['names'] = array();
+				$_SESSION['names']=array_push( $_SESSION['names'], $name);
 			}
 		}
 }
