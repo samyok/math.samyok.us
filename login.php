@@ -3,29 +3,28 @@ include 'assets/php/common.php';
 $name = NULL;
 if(isset($_POST['name'])){
 	$name = htmlspecialchars($_POST['name']);
-				$servername = "localhost";
-				$username = "root";
-				$password = "samyok";
-				$dbname = "samyokOnline";
+		$servername = "localhost";
+		$username = "root";
+		$password = "samyok";
+		$dbname = "samyokOnline";
 
-				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
-				// Check connection
-				if ($conn->connect_error) {
-					die("E_Connection failed: " . $conn->connect_error);
-				} 
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+			die("E_Connection failed: " . $conn->connect_error);
+		} 
 
-				$sql = "SELECT * FROM 2017_HALLOWEEN_AMC_8 WHERE name='$name'";
-				$result = $conn->query($sql);
+		$sql = "SELECT * FROM 2017_HALLOWEEN_AMC_8 WHERE name='$name'";
+		$result = $conn->query($sql);
 
-				if ($result->num_rows > 0) {
-					// output data of each row
-					echo "E_USER_TAKEN";
-					exit();
-				} else {
-					$name=$_SESSION['names'];
-			}
-		}
+		if ($result->num_rows > 0) {
+			// output data of each row
+			echo "E_USER_TAKEN";
+			exit();
+		} else {
+			$name=$_SESSION['names'];
+	}
 }
 if($name === NULL){
 	echo "E_NO_NAME_ENTERED";
