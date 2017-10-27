@@ -20,11 +20,10 @@ if(isset($_POST['name'])){
 
 				if ($result->num_rows > 0) {
 					// output data of each row
-					while($row = $result->fetch_assoc()) {
-						echo "id: " . $row["name"]."<br>";
-					}
+					echo "E_USER_TAKEN";
+					exit();
 				} else {
-			$name=$_SESSION['names'];
+					$name=$_SESSION['names'];
 			}
 		}
 }
