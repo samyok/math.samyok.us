@@ -3,7 +3,6 @@
 <html>
 <head>
 <?php
-session_start();
 echo $head;
 ?>
 	<title>Halloween AMC8</title>
