@@ -23,7 +23,7 @@ if(isset($_POST['name'])){
 			echo "E_USER_TAKEN";
 			exit();
 		} else {
-			$name=$_SESSION['names'];
+			$_SESSION['names']=$name;
 	}
 }
 if($name === NULL){
