@@ -10,9 +10,9 @@ echo $head;
 </head>
 <body>
 
-<div class="w3-card-4 w3-white w3-container">
+<div class="w3-card-4 w3-white w3-opacity w3-container">
 
-<div class="w3-container w3-dark-red">
+<div class="w3-container">
   <h2>Submit Answers to Halloween Mock AMC 8!</h2>
 </div>
 
