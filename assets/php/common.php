@@ -46,16 +46,16 @@ function toast(elem,color,msg){
 	x.style.backgroundColor=color;
 	$("#"+elem).html(msg);
 	setTimeout(function(){x.className=x.className.replace("show","")},3000)}
-</script>'
+</script>
+<script src="assets/js/main.js"></script>'
 ;
 $head = '
-	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="assets/js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Chewy|Crete+Round" rel="stylesheet">
 ';
  

@@ -17,7 +17,7 @@ echo $head;
 <div class="hero-image">
   <div class="hero-text">
     <h1>Halloween AMC 8</h1>
-    <p>Made by techguy2 and anser</p>
+    <p>Made by techguy2 and anser.</p>
     <button onclick='beginTest();' id="begin" class="white-hover">Begin!</button>
   </div>
 </div>
@@ -27,15 +27,15 @@ echo $head;
   <h2>Submit Answers to Halloween Mock AMC 8!</h2>
 </div>
 
-<form class="w3-container" action="login.php" method="POST">
-<p>We need some way to contact you. Either give us your real first name or your AoPS Id please. :)</p>
+<form id="registerForm" class="w3-container" action="login.php" method="POST">
+<p>We need some way to contact you. Either give us your real name or your AoPS ID please. :)</p>
 <label>Full Name or AoPS Username</label>
-<input class="w3-input w3-border w3-light-grey" name="name" type="text">
-<button onclick="submitName();" class="black-hover" style="float:right;">Next>></button>
+<input class="w3-input w3-border w3-light-grey w3-padding w3-hover-grey" name="name" type="text" required>
+<button onclick="$('#registerForm').submit();" class="black-hover" style="float:right;">Next>></button>
 </form>
-<div class="load"></div>
+<div class="load" style="display:none;"></div>
 </div>
-<?php echo $clouds; fmodtime("index.php"); ?>
+<?php echo $clouds; echo $bodyStuff; fmodtime("index.php"); ?>
 </body>
 <footer style="height: 100px;"> </footer>
 </html>
