@@ -21,16 +21,10 @@ if(isset($_POST['name'])){
 				if ($result->num_rows > 0) {
 					// output data of each row
 					while($row = $result->fetch_assoc()) {
-						echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+						echo "id: " . $row["name"]."<br>";
 					}
 				} else {
-			if (isset($_SESSION['names'])) {
-				if(!in_array($_POST['name'], $_SESSION['names'])){
-				$_SESSION['names']=array_push( $_SESSION['names'], $name);
-				}
-			} else {
-				$_SESSION['names'] = array();
-				$_SESSION['names']=array_push( $_SESSION['names'], $name);
+			$name=$_SESSION['names'];
 			}
 		}
 }
