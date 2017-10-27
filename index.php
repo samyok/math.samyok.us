@@ -8,17 +8,18 @@ echo $head;
 	<title>Halloween AMC8</title>
 </head>
 <body>
+	<div class="db fixed aspect-ratio--object stars-three"></div>
+	<div class="db fixed aspect-ratio--object stars"></div>
+	<div class="db fixed aspect-ratio--object stars-two"></div>
 
-      <div class="db fixed aspect-ratio--object stars-three">
-
-      </div>
-      <div class="db fixed aspect-ratio--object stars">
-
-      </div>
-      
-      <div class="db fixed aspect-ratio--object stars-two">
-
-      </div>
+	
+<div class="hero-image">
+  <div class="hero-text">
+    <h1>I am John Doe</h1>
+    <p>And I'm a Photographer</p>
+    <button>Hire me</button>
+  </div>
+</div>
 <div class="w3-card-4 w3-white w3-opacity w3-container">
 
 <div class="w3-container">
