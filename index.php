@@ -23,7 +23,6 @@ echo $head;
   <div class="Cloud Background"></div>
 <!--  <svg viewBox="0 0 40 24" class="Cloud"><use xlink:href="#Cloud"></use></svg>-->
 </div>
-
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="40px" height="24px" viewBox="0 0 40 24" enable- xml:space="preserve">
   <defs>
@@ -35,7 +34,7 @@ echo $head;
   </defs>
 </svg>
 
-<div class="w3-card-4">
+<div class="w3-card-4 w3-white w3-container">
 
 <div class="w3-container w3-dark-red">
   <h2>Submit Answers to Halloween Mock AMC 8!</h2>
