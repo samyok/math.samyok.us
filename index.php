@@ -7,7 +7,7 @@ echo $head;
 ?>
 	<title>Halloween AMC8</title>
 </head>
-<body>
+<body class="body">
 	<div class="background"></div>
 	<div class="db fixed aspect-ratio--object stars-three"></div>
 	<div class="db fixed aspect-ratio--object stars"></div>
@@ -30,12 +30,12 @@ echo $head;
 <form id="registerForm" class="w3-container" action="login.php" method="POST">
 <p>We need some way to contact you. Either give us your real name or your AoPS ID please. :)</p>
 <label>Full Name or AoPS Username</label>
-<input class="w3-input w3-border w3-light-grey w3-padding w3-hover-grey" name="name" type="text" required>
+<input class="w3-input w3-border w3-light-grey w3-padding w3-hover-grey" name="name" type="text" placeholder="John Doe" required>
 <button onclick="$('#registerForm').submit();" class="black-hover" style="float:right;">Next>></button>
-</form>
+</form><?php echo $bodyStuff; ?>
 <div class="load" style="display:none;"></div>
 </div>
-<?php echo $clouds; echo $bodyStuff; fmodtime("index.php"); ?>
+<?php echo $clouds; ?>
 </body>
 <footer style="height: 100px;"> </footer>
 </html>
