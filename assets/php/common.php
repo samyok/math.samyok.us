@@ -55,6 +55,7 @@ $head = '
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="assets/js/main.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Chewy|Crete+Round" rel="stylesheet">
 ';
  
@@ -93,7 +94,7 @@ function admin($q, $o, $of){
 	}
 }
 function fmodtime($fn){ //return file last modified
-	echo "<div id='filelastmodified' title='This could be off for a large number of reasons.' style='cursor: pointer; background-color: yellow; width: 100%; font-weight: bold; position: fixed; bottom: 0; padding: 10px;' onclick='$(\"#filelastmodified\").hide(\"fast\");'>This file was last modified at ".date('Y-m-d H:i:s', filemtime($fn)).". Click here to close.<span style='float: right;'>&times;</span></div>";
+	echo "<div id='filelastmodified' title='This could be off for a large number of reasons.' style='cursor: pointer; background-color: yellow; width: 100%; font-weight: bold; position: fixed; bottom: 0; padding: 10px;' onclick='$(\"#filelastmodified\").hide(\"fast\");'>This page was last modified at ".date('Y-m-d H:i:s', filemtime($fn)).". Click here to close.<span style='float: right;'>&times;</span></div>";
 }
 
 
