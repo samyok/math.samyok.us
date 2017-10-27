@@ -55,6 +55,7 @@ input{
 	font-size: 36px;
 }
 button.white-hover{
+	margin: 5px;
 	border: 2px solid #FFF; /* Green */
 	background-color: rgba(255,255,255,0);
 	padding: 20px;

@@ -3,7 +3,23 @@ include 'assets/php/common.php';
 $name = NULL;
 if(isset($_POST['name'])){
 	$name = htmlspecialchars($_POST['name']);
-	$_SESSION['name']=$name;
+		// Create connection
+		$conn = new mysqli("localhost", "root", "samyok", "samyokOnline");
+
+		// Check connection
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		} 
+		echo "Connected successfully";
+		$sql=mysql_query("SELECT * FROM 2017_HALLOWEEN_AMC_8 WHERE username=$_POST['name']");
+		if(mysql_num_rows($sql)>=1){
+			echo"name already exists";
+		} else {
+			if (!in_array($_POST['name'], $_SESSION['names'])) {
+				if(isset($_SESSION['names'])){$_SESSION['names'] = array();}
+				$_SESSION['names']=array_push( $_SESSION['names'], $name);
+			}
+		}
 }
 if($name === NULL){
 	echo "E_NO_NAME_ENTERED";
@@ -23,5 +39,8 @@ while ($i <26) {
 	</div></li>';
 	$i++;
 }
+echo '
+<button onclick="submitScores();" class="black-hover" style="float:right;">Submit &amp; Score>></button>
+';
 echo $bodyStuff; 
 ?>

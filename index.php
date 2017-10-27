@@ -8,7 +8,6 @@ echo $head;
 	<title>Halloween AMC8</title>
 </head>
 <body class="body">
-	<div class="background"></div>
 	<div class="db fixed aspect-ratio--object stars-three"></div>
 	<div class="db fixed aspect-ratio--object stars"></div>
 	<div class="db fixed aspect-ratio--object stars-two"></div>
@@ -19,6 +18,7 @@ echo $head;
     <h1>Halloween AMC 8</h1>
     <p>Made by techguy2 and anser.</p>
     <button onclick='beginTest();' id="begin" class="white-hover">Begin!</button>
+	<?php if(isset($_SESSION['names'])){echo '<button onclick="returnee();" id="returneeBTN" class="white-hover">View Scores</button>';} ?>
   </div>
 </div>
 <div id="register" class="w3-card-4 w3-white w3-container">
