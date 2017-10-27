@@ -1,4 +1,4 @@
-include 'assets/php/common.php'
+<?php include 'assets/php/common.php' ?>
 <!DOCTYPE html>
 <html>
 <head>
