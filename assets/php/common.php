@@ -1,5 +1,53 @@
 <?php
+/* THIS IS THE COMMON FILE
+	LOGINS, SESSIONS, SNACKBARS, 
+	CAN ALL BE SERVED FROM HERE. 
+	
+	INCLUDE THIS WITH 
+		include("assets/php/common.php")
 
+	+---------------------------+
+	|     TABLE OF CONTENTS     |
+	|							|
+	|	0. IMPORTANT RULES		|
+	|	1. Login/SESSIONS		|
+	|	2. Header/Body			|
+	|	3. Custom PHP Commands	|
+	|							|
+	+---------------------------+
+*/
+
+/* |	0. IMPORTANT RULES		| */
+date_default_timezone_set("America/Chicago");
+
+/* |	1. Login/SESSIONS		| */
+session_start();
+
+$loggedin=FALSE;
+$username="";
+$isAdmin = FALSE;
+
+if(isset($_SESSION['user'])){ // get session vars and set vars to them
+	$loggedin=TRUE;
+	$username=$_SESSION['user'];
+	// TODO check admin table
+}
+if(isset($_SESSION['admin'])){
+	$isAdmin = TRUE;
+}
+
+/* |	2. Header/body			| */
+
+$bodyStuff = '<div id="snackbar">Loading...</div>
+<script>
+function toast(elem,color,msg){
+	var x=document.getElementById(elem);
+	x.className="show";
+	x.style.backgroundColor=color;
+	$("#"+elem).html(msg);
+	setTimeout(function(){x.className=x.className.replace("show","")},3000)}
+</script>'
+;
 $head = '
 	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -7,23 +55,6 @@ $head = '
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <style>
-body, html {
-	margin:0;
-}
-#backgrounddiv {
-	background: #000000 url("http://samyok.us/public/assets/blackboard.png") repeat-y center;
-	    background-size: 100%;
-	opacity: 0.2;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
-	color: white;
-	z-index: -1;
-	position: fixed;
-	top:0;
-	left:0;
-	height: 100%; width: 100%;
-}
-</style>
 ';
  
 $clouds = '
@@ -52,7 +83,17 @@ $clouds = '
 </svg>
 ';
 
-
+/* |	3. Custom PHP Commands	| */
+function admin($q, $o, $of){
+	if($q){
+		echo $o;
+	} else {
+		echo $of;
+	}
+}
+function fmodtime($fn){ //return file last modified
+	echo "<div id='filelastmodified' title='This could be off for a large number of reasons.' style='cursor: pointer; background-color: yellow; width: 100%; font-weight: bold; position: fixed; bottom: 0; padding: 10px;' onclick='$(\"#filelastmodified\").hide(\"fast\");'>This file was last modified at ".date('Y-m-d H:i:s', filemtime($fn)).". Click here to close.<span style='float: right;'>&times;</span></div>";
+}
 
 
 

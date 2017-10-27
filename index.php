@@ -27,6 +27,6 @@ echo $head;
 </form>
 
 </div>
-<?php echo $clouds; ?>
+<?php echo $clouds; fmodtime("index.php"); ?>
 </body>
 </html>
