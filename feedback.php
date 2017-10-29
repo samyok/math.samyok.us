@@ -5,7 +5,7 @@ if(isset($_GET['password'])){
 	if($psw != "candyforallandallforcandy"){
 		exit();
 	}
-	echo "<h1>List of all reviews:</h1>"
+	echo "<h1>List of all reviews:</h1>";
 	$fbackfiles = glob("reviews/*-*");
 	foreach ($fbackfiles as $filenameforpsw){
 	echo "<a href='$filenameforpsw'>$filenameforpsw</a><br/>";
