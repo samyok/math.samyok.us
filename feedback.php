@@ -12,7 +12,7 @@ if(isset($_GET['password'])){
 	} 
 exit();
 }
-if(!isset($_POST['favprob']) && !isset($_POST['rating'] && !isset($_POST['impre'] && !isset($_POST['creat'])))){
+if(!isset($_POST['favprob']) && !isset($_POST['rating']) && !isset($_POST['impre']) && !isset($_POST['creat'])){
 	header("Location: index.php");
 	exit();
 }
