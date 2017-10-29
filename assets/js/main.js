@@ -84,7 +84,7 @@ $.post("submit.php", {name: uname, answers: uanswers})
 					$("#answerSheethide").show();	
 			}
 		} else {
-			$("#loadanswer").hide();
+			$("#loadanswer").hide();$("#answerSheethide").show();
 			$("#answerSheethide").html(data);
 		}
 	});
