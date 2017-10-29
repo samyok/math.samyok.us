@@ -67,7 +67,25 @@ $(document).keydown(function(e){
 });
 
 function submitScores(uname, uanswers){
-$.post("submit.php", {name: uname, answers: uanswers},function(data) {
-	console.log("done: "+data);
-});
+$("#answerSheethide").hide();
+$("#loadanswer").show();
+$.post("submit.php", {name: uname, answers: uanswers})
+.done(function( data ) {
+		if(data.charAt(0) === "E"){
+			switch(data){
+				case "E_NO_NAME_ENTERED":
+					toast("snackbar", "red", "Please enter a name");
+					$("#loadanswer").hide();
+					$("#answerSheethide").show();		
+					break;
+				default:
+					toast("snackbar", "red", data);
+					$("#loadanswer").hide();
+					$("#answerSheethide").show();	
+			}
+		} else {
+			$("#loadanswer").hide();
+			$("#answerSheethide").html(data);
+		}
+	});
 }
