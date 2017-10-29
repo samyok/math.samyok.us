@@ -17,7 +17,7 @@ echo $head;
   <div class="hero-text">
     <h1>Halloween AMC 8</h1>
     <p>Made by techguy2 and anser.</p>
-	<p style="font-size: 24px">&amp; md123 &amp; SpinTop too! </p>
+	<p style="font-size: 18px">&amp; md123 &amp; SpinTop &amp; popper224...</p>
 	<?php if(isset($_SESSION['names'])){echo '<button onclick="returnee();" id="returneeBTN" class="white-hover">View Scores</button>';} else {echo '<button onclick=\'beginTest();\' id="begin" class="white-hover">Begin!</button>';} ?>
   </div>
 </div>

@@ -65,3 +65,9 @@ $(document).keydown(function(e){
 	}
 	
 });
+
+function submitScores(uname, uanswers){
+$.post("submit.php", {name: uname, answers: uanswers},function(data) {
+	console.log("done: "+data);
+});
+}

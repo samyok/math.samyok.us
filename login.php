@@ -23,8 +23,8 @@ if(isset($_POST['name'])){
 			echo "E_USER_TAKEN";
 			exit();
 		} else {
-			$_SESSION['names']=$name;
-	}
+			$_SESSION['tempname']=$name;
+		}
 }
 if($name === NULL){
 	echo "E_NO_NAME_ENTERED";
@@ -45,7 +45,7 @@ while ($i <26) {
 	$i++;
 }
 echo '
-<button onclick="submitScores();" class="black-hover" style="float:right;">Submit &amp; Score>></button>
+<button onclick="submitScores('.$name.',answers.toString());" class="black-hover" style="float:right;">Submit &amp; Score>></button>
 ';
 echo $bodyStuff; 
 ?>
