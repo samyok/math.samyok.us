@@ -2,6 +2,10 @@
 function beginTest(){
 	$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 }
+function lock(){ 
+	$("html, body").animate({ scrollTop: 0 }, 1000);
+	$("body").addClass("lockscroll");
+}
 $("#registerForm").submit(function(event){
 	$("#register .load").show();
 	$("#register form").hide();
@@ -65,7 +69,14 @@ $(document).keydown(function(e){
 	}
 	
 });
-
+function logout(){
+	$(".hero-text h1").html("Are you sure?");
+	$(".hero-text p").hide("slow");
+	$("#returneeBTN").html("No");
+	$('#returneeBTN').attr('onclick', "window.location.href=\'index.php\'");
+	$('#logoutBTN').html("Yes");
+	$('#logoutBTN').attr('onclick', "window.location.href=\'logout.php\'");
+}
 function submitScores(uname, uanswers){
 $("#answerSheethide").hide();
 $("#loadanswer").show();
@@ -84,7 +95,8 @@ $.post("submit.php", {name: uname, answers: uanswers})
 					$("#answerSheethide").show();	
 			}
 		} else {
-			$("#loadanswer").hide();$("#answerSheethide").show();
+			$("#loadanswer").hide();
+$("#answerSheethide").show();
 			$("#answerSheethide").html(data);
 		}
 	});

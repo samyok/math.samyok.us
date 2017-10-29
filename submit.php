@@ -25,11 +25,27 @@ $sql = "INSERT INTO 2017_HALLOWEEN_AMC_8 (name, answers)
 VALUES ('$name', '$answers')";
 
 if ($conn->query($sql) === TRUE) {
+$_SESSION['names'] = $name;
     echo "
 <h1>Thank you for participating!</h1>
 <p>If you would like, could you please leave some feedback? Thanks!</p>
-<form action='feedback.php' method='POST'><textarea name='feedback' style='background-color: #f8f8f8;'class='w3-input w3-blue'></textarea>
-
+<form action='feedback.php' method='POST'>
+<p><b>How creative were the problems? </b></p>
+<input name='creat' class='w3-input w3-border w3-hover-red' type='text'>
+<p><b>What was your overall impression of the Halloween AMC 8? </b></p>
+<input name='impre' class='w3-input w3-border w3-hover-red' type='text'>
+<p><b>What was your favorite problem of the Halloween AMC 8? </b></p>
+<input name='favprob' class='w3-input w3-border w3-hover-red' type='text'>
+<p>Please rate us on difficulty:</p>
+  <select class='w3-select' id='rating' name='rating'>
+	<option value="" disabled selected>--Choose your option--</option>
+    <option value='1'>Wayyy too easy.</option>
+    <option value='2'>Easier than normal.</option>
+    <option value='3'>Wow! This could have been the 2017 AMC 8.</option>
+	<option value='4'>Harder than normal.</option>
+	<option value='5'>Wayyy too hard</option>
+  </select>
+<br>
 <button class='black-hover'>Submit</button></form>
 ";
 } else {

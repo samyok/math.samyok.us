@@ -18,7 +18,7 @@ echo $head;
     <h1>Halloween AMC 8</h1>
     <p>Made by techguy2 and anser.</p>
 	<p style="font-size: 18px">&amp; md123 &amp; SpinTop &amp; popper224...</p>
-	<?php if(isset($_SESSION['names'])){echo '<button onclick="returnee();" id="returneeBTN" class="white-hover">View Scores</button>';} else {echo '<button onclick=\'beginTest();\' id="begin" class="white-hover">Begin!</button>';} ?>
+	<?php if(isset($_SESSION['names'])){echo '<style>body{ overflow: hidden;}</style><button onclick="returnee();" id="returneeBTN" class="white-hover">View Scores</button><button onclick="logout();" id="logoutBTN" class="white-hover">Logout</button>';} else {echo '<button onclick=\'beginTest();\' id="begin" class="white-hover">Begin!</button>';} ?>
   </div>
 </div>
 <div id="register" class="w3-card-4 w3-white w3-container">

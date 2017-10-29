@@ -28,6 +28,9 @@ a {
 input{
 	border: 2px solid #eee;
 }
+*:focus{
+	outline: none;
+}
 /* The hero image */
 .hero-image {
     /* Set a specific height */
@@ -127,6 +130,9 @@ ol li {
 label {
 	font-size: 24px;
 }
+.lockscroll{
+overflow: hidden;
+}
 .load{
 	border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
@@ -149,4 +155,11 @@ textarea {
     border-radius: 4px;
     background-color: #0000FF;
     resize: none;
+}
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
 }

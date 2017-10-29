@@ -46,6 +46,7 @@ while ($i <26) {
 	$i++;
 }
 echo '
+<input class="w3-checkbox" type="checkbox" checked> I consent to having my score viewed publicly and to be added on the leaderboard. 
 <button onclick="submitScores(\''.$name.'\',answers.toString());" class="black-hover" style="float:right;">Submit &amp; Score>></button></div>
 ';
 echo $bodyStuff; 
