@@ -17,7 +17,7 @@ if(!isset($_POST['favprob']) && !isset($_POST['rating']) && !isset($_POST['impre
 	exit();
 }
 $name= $_SESSION['names'];
-$fback = $name." said: \n\nMy favorite problem was "htmlspecialchars($_POST['favprob']).". \n \nI rated the difficulty as ".htmlspecialchars($_POST['rating'])." out of 5. \n \nHow we can improve: ".htmlspecialchars($_POST['impre'])."Creativity: ".htmlspecialchars($_POST['creat']);
+$fback = $name." said: \n\nMy favorite problem was ".htmlspecialchars($_POST['favprob']).". \n \nI rated the difficulty as ".htmlspecialchars($_POST['rating'])." out of 5. \n \nHow we can improve: ".htmlspecialchars($_POST['impre'])."Creativity: ".htmlspecialchars($_POST['creat']);
 $newfilename = time()."-".$name.".txt";
 $newFile = fopen($my_file, 'w') or die('Sorry! Your feedback was not saved. If there is something you need to tell us, email me at <a href="mailto:samyok@samyok.us">samyok@samyok.us</a>. Click <a href="index.php">here</a> to go back.
 <br> <br> Error code: '.$my_file);
