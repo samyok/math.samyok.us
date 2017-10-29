@@ -38,7 +38,7 @@ $_SESSION['names'] = $name;
 <input name='favprob' class='w3-input w3-border w3-hover-red' type='text'>
 <p>Please rate us on difficulty:</p>
   <select class='w3-select' id='rating' name='rating'>
-	<option value="" disabled selected>--Choose your option--</option>
+	<option value='' disabled selected>--Choose your option--</option>
     <option value='1'>Wayyy too easy.</option>
     <option value='2'>Easier than normal.</option>
     <option value='3'>Wow! This could have been the 2017 AMC 8.</option>
