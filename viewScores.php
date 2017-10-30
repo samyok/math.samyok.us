@@ -35,25 +35,25 @@ if ($result->num_rows > 0) {
 $score=0;
 echo "<ol>";
 $i=0;
-		while($i<26){
+		while($i<25){
 $correctNow = $correctAnswers[$i];
 $answeredNow = $answers[$i];
 $A = ""; $B = ""; $C = ""; $D = ""; $E = "";
 if($correctNow === $answeredNow){$score++;}
 switch($correctNow){
-	case "A": $A = $A+" correct "; break;
-	case "B": $B = $B+" correct "; break;
-	case "C": $C = $C+" correct "; break;
-	case "D": $D = $D+" correct "; break;
-	case "E": $E = $E+" correct "; break;
+	case "A": $A = $A." correct "; break;
+	case "B": $B = $B." correct "; break;
+	case "C": $C = $C." correct "; break;
+	case "D": $D = $D." correct "; break;
+	case "E": $E = $E." correct "; break;
 	default: $A = $B = $C = $D = $E = ""; break;
 }
 switch($answeredNow){
-	case "A": $A = $A+" active "; break;
-	case "B": $B = $B+" active "; break;
-	case "C": $C = $C+" active "; break;
-	case "D": $D = $D+" active "; break;
-	case "E": $E = $E+" active "; break;
+	case "A": $A = $A." active "; break;
+	case "B": $B = $B." active "; break;
+	case "C": $C = $C." active "; break;
+	case "D": $D = $D." active "; break;
+	case "E": $E = $E." active "; break;
 	default: $A = $B = $C = $D = $E = ""; break;
 }
 echo '<li><div id="problem'.$i.'" class="problem-options">

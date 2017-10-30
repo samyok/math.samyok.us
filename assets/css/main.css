@@ -88,7 +88,7 @@ button.black-hover{
 	transition-duration: 0.5s;
 	font-size: 24px;
 }
-button.black-hover:hover {
+button.black-hover:hover:not(:disabled) {
 	background-color: rgba(0,0,0,1);
     color: white;
 	font-size: 24px;
@@ -107,7 +107,7 @@ button.option{
 	transition-duration: 0.5s;
 	font-size: 24px;
 }
-button.option:hover:not(.active) {
+button.option:hover:not(.active):not(:disabled) {
 	background-color: rgba(0,0,0,0.2);
 }
 button.option.active {
