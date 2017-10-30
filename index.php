@@ -11,7 +11,7 @@ if(count($_COOKIE) > 0) {} else {
     echo "Cookies are disabled. Please enable them. ";
 	exit();
 }
-<?php
+
 echo $head;
 ?>
 	<title>Halloween AMC8</title>
