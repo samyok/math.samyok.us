@@ -47,7 +47,7 @@ while ($i <26) {
 }
 echo '
 </ol>
-<input class="w3-checkbox" type="checkbox" checked><p> I consent to having my score viewed publicly and to be added on the leaderboard. </p>
+<input class="w3-checkbox" type="checkbox" name="leader" value="1"checked><p> I consent to having my score viewed publicly and to be added on the leaderboard. </p>
 <button onclick="submitScores(\''.$name.'\',answers.toString());" class="black-hover" style="float:right;">Submit &amp; Score>></button></div>
 ';
 echo $bodyStuff; 

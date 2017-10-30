@@ -20,10 +20,11 @@ if(!isset($_POST['name']) || !isset($_POST['answers'])){
 		if (!$conn) {
 			die("E_Connection failed: " . mysqli_connect_error());
 		}
-	
-$time = time();
-$sql = "INSERT INTO 2017_HALLOWEEN_AMC_8 (name, answers, reg_date)
-VALUES ('$name', '$answers', '$time')";
+$showboard = htmlspecialchars($_POST['leader']);
+$date = date_create();;
+$time =date_format($date, 'U = Y-m-d H:i:s');
+$sql = "INSERT INTO 2017_HALLOWEEN_AMC_8 (name, answers, reg_date, showLeaderboard)
+VALUES ('$name', '$answers', '$time', $showboard)";
 
 if ($conn->query($sql) === TRUE) {
 $_SESSION['names'] = $name;
