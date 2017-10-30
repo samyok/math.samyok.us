@@ -1,9 +1,6 @@
 <?php
 include 'assets/php/common.php';
 
-$psw = htmlspecialchars($_GET['user']);
-
-
 $servername = "localhost";
 $username = "root";
 $password = "samyok";
@@ -16,14 +13,26 @@ if ($conn->connect_error) {
     die("E_Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT name, answers FROM 2017_HALLOWEEN_AMC_8 WHERE showLeader='1'";
+$sql = "SELECT name, answers FROM 2017_HALLOWEEN_AMC_8 WHERE showLeader=1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0 ) {   // output data of each row
     echo "<h1>Leaderboard: </h1><table id='myTable'><tr><th onclick='sortTable(0)'>Name</th><th onclick='sortTable(1)'>Score</th></tr>";
-while($row = $result->fetch_assoc()) {
+	while($row = $result->fetch_assoc()) {
+		$correctAnswers = "B, B, D, C, D, C, D, D, A, B, E, C, E, A, D, D, E, D, B, D, E, A, D, C, E";
+		$correctAnswers = str_split(str_replace(' ','', str_replace( ',', '', $correctAnswers )),1);
+		$answers = str_split(str_replace(' ','', str_replace( ',', '', $row["answers"] )),1);
+		$score=0;
+		$i=0;
+		while($i<25){
+			$correctNow = $correctAnswers[$i];
+			$answeredNow = $answers[$i];
+			if($correctNow === $answeredNow){$score++;}
+			$i++;
+		}
+	}
         echo "<tr><td>". $row["name"]."</td><td>$score</td></tr>";
-    }
+}
 echo "</table>";
 echo '<script>
 function sortTable(n) {
