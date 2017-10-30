@@ -37,7 +37,7 @@ echo "<ol>";
 		while($i<26){
 $correctNow = $correctAnswers[$i];
 $answeredNow = $answers[$i];
-$A = "", $B = "", $C = "", $D = "", $E = "";
+$A = ""; $B = ""; $C = ""; $D = ""; $E = "";
 if($correctNow === $answeredNow){$score++;}
 switch($correctNow){
 	case "A": $A = $A+" correct "; break;
