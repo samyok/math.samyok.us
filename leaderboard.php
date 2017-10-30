@@ -32,7 +32,7 @@ if ($result->num_rows > 0 ) {   // output data of each row
 		}
 	}
         echo "<tr><td>". $row["name"]."</td><td>$score</td></tr>";
-}
+
 echo "</table>";
 echo '<script>
 function sortTable(n) {
