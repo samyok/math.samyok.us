@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "
 			<h1>Hello again, ".$row["name"].".</h1><p>Green and black highlights what problems you got wrong (black is what you answered, green is the correct answer), yellow highlights unanswered questions, and black only highlights are correct. Click <a href='printout.pdf'>here</a> to see the problems.";
-echo "<button style='width: 50%;' onclick='window.location.reload()' class='black-hover'>Home</button><button style='width: 50%;' onclick=".'"window.location.href=\'leaderboard.php\''." class='black-hover'>Leaderboard</button>";
+echo "<button style='width: 50%;' onclick='window.location.reload()' class='black-hover'>Home</button><button style='width: 50%;' onclick=".'"window.location.href=\'leaderboard.php\'"'." class='black-hover'>Leaderboard</button>";
 		if($row['showLeaderboard']==0){echo "
 			<p>You have chosen <b>NOT</b> to show your name on the leaderboard. To change this, you will need to either <a href='samyok@samyok.us'>email me</a> or PM me (techguy2). </p>";
 		}
