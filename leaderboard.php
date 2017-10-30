@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("E_Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT name, answers FROM 2017_HALLOWEEN_AMC_8 WHERE showLeader=1";
+$sql = "SELECT name, answers FROM 2017_HALLOWEEN_AMC_8 WHERE showLeaderboard=1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0 ) {   // output data of each row
@@ -30,9 +30,9 @@ if ($result->num_rows > 0 ) {   // output data of each row
 			if($correctNow === $answeredNow){$score++;}
 			$i++;
 		}
-	}
+	
         echo "<tr><td>". $row["name"]."</td><td>$score</td></tr>";
-
+}
 echo "</table>";
 echo '<script>
 function sortTable(n) {
