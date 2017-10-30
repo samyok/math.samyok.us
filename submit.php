@@ -49,7 +49,7 @@ $_SESSION['names'] = $name;
 	<option value='5'>Wayyy too hard</option>
   </select>
 <br>
-<button class='black-hover'>Submit</button></form><button onclick='window.location.reload()' class='black-hover'>Skip</button>
+<button class='black-hover'>Submit</button></form><button onclick='window.location.reload()' class='black-hover'>Skip</button
 ";
 } else {
     echo "E_" . $sql . "<br>" . $conn->error;
