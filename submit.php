@@ -23,8 +23,9 @@ if(!isset($_POST['name']) || !isset($_POST['answers'])){
 if(isset($_POST['leader']) &&  $_POST['leader'] ==1){$showboard = 1;} else {$showboard = 0;}
 $date = date_create();;
 $time =date_format($date, 'Y-m-d H:i:s');
-$sql = "INSERT INTO 2017_HALLOWEEN_AMC_8 (name, answers, reg_date, showLeaderboard)
-VALUES ('$name', '$answers', '$time', $showboard)";
+$passkey = uniqid("",TRUE);
+$sql = "INSERT INTO 2017_HALLOWEEN_AMC_8 (name, answers, reg_date, showLeaderboard, PASSKEY)
+VALUES ('$name', '$answers', '$time', $showboard, '$passkey')";
 
 if ($conn->query($sql) === TRUE) {
 $_SESSION['names'] = $name;
