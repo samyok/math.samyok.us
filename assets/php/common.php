@@ -98,6 +98,7 @@ function fmodtime($fn){ //return file last modified
 }
 
 $homebtn = "<button onclick='window.location.reload()' class='black-hover'>Home</button>";
+$homebtnfull = "<button style='width: 100%;' onclick='window.location.reload()' class='black-hover'>Home</button>";
 
 
 ?>
