@@ -34,6 +34,7 @@ if ($result->num_rows > 0) {
 		$answers = str_split(str_replace(' ','', str_replace( ',', '', $row["answers"] )),1);
 $score=0;
 echo "<ol>";
+$i=0;
 		while($i<26){
 $correctNow = $correctAnswers[$i];
 $answeredNow = $answers[$i];
