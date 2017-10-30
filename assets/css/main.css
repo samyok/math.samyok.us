@@ -115,7 +115,7 @@ button.option.active {
 	color: white;
 }
 button.option.correct {
-	background-color: rgba(0,255,0,1);
+	background-color: rgba(0,255,0,1) !important;
 	color: white;
 }
 ol{transition-duration: 0.5s;
