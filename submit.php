@@ -21,8 +21,9 @@ if(!isset($_POST['name']) || !isset($_POST['answers'])){
 			die("E_Connection failed: " . mysqli_connect_error());
 		}
 	
-$sql = "INSERT INTO 2017_HALLOWEEN_AMC_8 (name, answers)
-VALUES ('$name', '$answers')";
+$time = time();
+$sql = "INSERT INTO 2017_HALLOWEEN_AMC_8 (name, answers, reg_date)
+VALUES ('$name', '$answers', '$time')";
 
 if ($conn->query($sql) === TRUE) {
 $_SESSION['names'] = $name;
