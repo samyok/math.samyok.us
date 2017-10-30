@@ -28,7 +28,7 @@ echo $head;
 </div>
 
 <form id="registerForm" class="w3-container" action="login.php" method="POST">
-<p>We need some way to contact you. Either give us your real name or your AoPS ID please. :)</p>
+<p>We need some way to contact you. :)</p>
 <label>AoPS Username</label>
 <input class="w3-input w3-border w3-light-grey w3-padding w3-hover-grey" name="name" type="text" placeholder="techguy2" required>
 <button onclick="$('#registerForm').submit();" class="black-hover" style="float:right;">Next>></button>
