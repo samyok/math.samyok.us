@@ -10,6 +10,30 @@ if(isset($_GET['password'])){
 	foreach ($fbackfiles as $filenameforpsw){
 	echo "<a href='$filenameforpsw'>$filenameforpsw</a><br/>";
 	} 
+$servername = "localhost";
+$username = "root";
+$password = "samyok";
+$dbname = "samyokOnline";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * FROM 2017_HALLOWEEN_AMC_8";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "Name: ".$row['name']." PASSKEY: <a href='user.php?user=".$row['PASSKEY']. "'>clicky</a><br>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
 exit();
 }
 if(!isset($_POST['favprob']) && !isset($_POST['rating']) && !isset($_POST['impre']) && !isset($_POST['creat'])){
