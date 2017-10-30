@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "
 			<h1>Hello again, ".$row["name"].".</h1>";
-echo $homebtnfull;
+echo "<button style='width: 50%;' onclick='window.location.reload()' class='black-hover'>Home</button><button style='width: 50%;' onclick='window.location.href=".'"leaderboard.php"'." class='lack-hover'>Leaderboard</button>";
 		if($row['showLeaderboard']===0){echo "
 			<p>You have chosen <b>NOT</b> to show your name on the leaderboard. To change this, you will need to either <a href='samyok@samyok.us'>email me</a> or PM me (techguy2). </p>";
 		}
@@ -70,8 +70,7 @@ echo '<li><div id="problem'.$i.'" class="problem-options">
 	}
 }
 echo "</ol>";
-echo "<h2>You got $score/25. Congrats!</h2>
-<button class='black-hover' onclick='window.location.href=".'"index.php">Back<\button>';
+echo "<h2>You got $score/25. Congrats!</h2>';
 } else {
     echo "We don't have any submissions for you. :'(";
 }
