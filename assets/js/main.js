@@ -2,6 +2,7 @@
 function beginTest(){
 	$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 }
+if(!navigator.cookieEnabled){$("body").html("Please Enable Cookies");}
 function returnee(){
 $("html, body").animate({ scrollTop: $(document).height() }, 1000);
 	$("#register .load").show();
