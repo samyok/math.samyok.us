@@ -69,7 +69,8 @@ echo '<li><div id="problem'.$i.'" class="problem-options">
 	}
 }
 echo "</ol>";
-echo "<h2>You got $score/25. Congrats!</h2>";
+echo "<h2>You got $score/25. Congrats!</h2>
+<button class='black-hover' onclick='window.location.href=".'"index.php">Back<\button>';
 } else {
     echo "We don't have any submissions for you. :'(";
 }
