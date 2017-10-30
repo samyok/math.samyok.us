@@ -3,6 +3,7 @@ function beginTest(){
 	$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 }
 function returnee(){
+$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 	$("#register .load").show();
 	$("#register form").hide();
 	$.post({
