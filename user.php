@@ -26,6 +26,7 @@ if ($result->num_rows == 1) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $_SESSION['names'] = $row["name"];
+	header("Location: index.php");
     }
 } else {
     echo "Wrong Passkey.";
