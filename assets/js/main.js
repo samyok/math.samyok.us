@@ -106,7 +106,10 @@ function logout(){
 function submitScores(uname, uanswers){
 $("#answerSheethide").hide();
 $("#loadanswer").show();
-$.post("submit.php", {name: uname, answers: uanswers})
+if($("#consent").is(':checked')){
+var leadernow = 1;
+} else { var leadernow = 0;}
+$.post("submit.php", {name: uname, answers: uanswers, leader: leadernow })
 .done(function( data ) {
 		if(data.charAt(0) === "E"){
 			switch(data){
