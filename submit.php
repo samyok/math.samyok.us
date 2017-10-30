@@ -20,9 +20,9 @@ if(!isset($_POST['name']) || !isset($_POST['answers'])){
 		if (!$conn) {
 			die("E_Connection failed: " . mysqli_connect_error());
 		}
-$showboard = htmlspecialchars($_POST['leader']);
+if(isset($_POST['leader']) &&  $_POST['leader'] ==1){$showboard = 1;} else {$showboard = 0;}
 $date = date_create();;
-$time =date_format($date, 'U = Y-m-d H:i:s');
+$time =date_format($date, 'Y-m-d H:i:s');
 $sql = "INSERT INTO 2017_HALLOWEEN_AMC_8 (name, answers, reg_date, showLeaderboard)
 VALUES ('$name', '$answers', '$time', $showboard)";
 
