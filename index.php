@@ -24,7 +24,7 @@ echo $head;
 <div id="register" class="w3-card-4 w3-white w3-container">
 
 <div class="w3-container">
-  <h2>Submit Answers to Halloween Mock AMC 8!</h2>
+  <h2>Submit Answers to our <a href="printout.pdf">Halloween Mock AMC 8</a>!</h2>
 </div>
 
 <form id="registerForm" class="w3-container" action="login.php" method="POST">
@@ -37,5 +37,5 @@ echo $head;
 </div>
 <?php echo $clouds; ?>
 </body>
-<footer style="height: 100px;"> </footer>
+<footer style="height: 100px; padding-top: 50px; margin-top: 50px; text-align: center; width: 100%;">Created by techguy2. This website is <a href="https://github.com/nepaltechguy2/math.samyok.us/">open-source!</a><br> Do you want to have a super-cool submission form for your mock test? <a href="mailto:samyok@samyok.us">Email me!</a></footer>
 </html>
