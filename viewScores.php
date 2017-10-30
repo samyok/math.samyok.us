@@ -39,7 +39,15 @@ $i=0;
 $correctNow = $correctAnswers[$i];
 $answeredNow = $answers[$i];
 $A = ""; $B = ""; $C = ""; $D = ""; $E = "";
-if($correctNow === $answeredNow){$score++;}
+switch($answeredNow){
+	case "A": $A = $A." active "; break;
+	case "B": $B = $B." active "; break;
+	case "C": $C = $C." active "; break;
+	case "D": $D = $D." active "; break;
+	case "E": $E = $E." active "; break;
+	default: $A = $B = $C = $D = $E = "w3-yellow"; break;
+}
+if($correctNow === $answeredNow){$score++;}else{
 switch($correctNow){
 	case "A": $A = $A." correct "; break;
 	case "B": $B = $B." correct "; break;
@@ -48,14 +56,8 @@ switch($correctNow){
 	case "E": $E = $E." correct "; break;
 	default: $A = $B = $C = $D = $E = ""; break;
 }
-switch($answeredNow){
-	case "A": $A = $A." active "; break;
-	case "B": $B = $B." active "; break;
-	case "C": $C = $C." active "; break;
-	case "D": $D = $D." active "; break;
-	case "E": $E = $E." active "; break;
-	default: $A = $B = $C = $D = $E = ""; break;
 }
+
 echo '<li><div id="problem'.$i.'" class="problem-options">
 		<button class="option '.$A.'" disabled>A</button>
 		<button class="option '.$B.'" disabled>B</button>
