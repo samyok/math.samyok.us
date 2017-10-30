@@ -89,7 +89,7 @@ function sortTable(n) {
     }
   }
 }
-sortTable(1);
+sortTable(1);sortTable(1);
 </script>
 ';
 } else {

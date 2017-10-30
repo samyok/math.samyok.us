@@ -26,6 +26,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "
 			<h1>Hello again, ".$row["name"].".</h1>";
+echo $homebtn;
 		if($row['showLeaderboard']===0){echo "
 			<p>You have chosen <b>NOT</b> to show your name on the leaderboard. To change this, you will need to either <a href='samyok@samyok.us'>email me</a> or PM me (techguy2). </p>";
 		}

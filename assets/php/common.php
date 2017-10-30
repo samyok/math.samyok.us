@@ -97,6 +97,7 @@ function fmodtime($fn){ //return file last modified
 	echo "<div id='filelastmodified' title='This could be off for a large number of reasons.' style='cursor: pointer; background-color: yellow; width: 100%; font-weight: bold; position: fixed; bottom: 0; padding: 10px;' onclick='$(\"#filelastmodified\").hide(\"fast\");'>This page was last modified at ".date('Y-m-d H:i:s', filemtime($fn)).". Click here to close.<span style='float: right;'>&times;</span></div>";
 }
 
+$homebtn = "<button onclick='window.location.reload()' class='black-hover'>Home</button>";
 
 
 ?>
