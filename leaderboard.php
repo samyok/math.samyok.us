@@ -13,7 +13,7 @@ if(count($_COOKIE) > 0) {} else {
 }
 echo $head;
 ?>
-	<title>Halloween AMC 8 Leaderboard/title>
+	<title>Halloween AMC 8 Leaderboard</title>
 </head>
 <body class="body">
 	<div class="db fixed aspect-ratio--object stars-three"></div>
