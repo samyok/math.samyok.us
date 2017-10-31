@@ -138,8 +138,9 @@ $conn->close();
 
 
 ?>
-</div>
 	<button style='width: 100%;' onclick='window.location.href="index.php"' class='black-hover'>Home</button>
+</div>
+	
 <?php echo $clouds; ?>
 </body>
 <footer style="height: 100px; padding-top: 50px; margin-top: 50px; text-align: center; width: 100%;">Created by techguy2. This website is <a href="https://github.com/nepaltechguy2/math.samyok.us/">open-source!</a><br> Do you want to have a super-cool submission form for your mock test? <a href="mailto:samyok@samyok.us">Email me!</a></footer>
