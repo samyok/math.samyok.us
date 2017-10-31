@@ -14,6 +14,23 @@ if(count($_COOKIE) > 0) {} else {
 echo $head;
 ?>
 	<title>Halloween AMC 8 Leaderboard</title>
+	<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
 </head>
 <body class="body">
 	<div class="db fixed aspect-ratio--object stars-three"></div>
