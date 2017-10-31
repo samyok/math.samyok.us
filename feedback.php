@@ -30,6 +30,17 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "Name: ".$row['name']." PASSKEY: <a href='user.php?user=".$row['PASSKEY']. "'>clicky</a><br>";
     }
+	if(isset($_GET['removeName'])){
+		$rname = $_GET['removeName'];
+		
+$sql = "UPDATE 2017_HALLOWEEN_AMC_8 SET showLeaderboard=0 WHERE name=".$rname;
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
+}
+
 } else {
     echo "0 results";
 }
