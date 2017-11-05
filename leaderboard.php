@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("E_Connection failed: " . $conn->connect_error);
-} 
+}
 
 $sql = "SELECT name, answers FROM 2017_HALLOWEEN_AMC_8 WHERE showLeaderboard=1";
 $result = $conn->query($sql);
@@ -19,7 +19,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0 ) {   // output data of each row
     echo "<h1>Leaderboard: </h1><table id='myTable'><tr><th onclick='sortTable(0)'>Name</th><th onclick='sortTable(1)'>Score</th></tr>";
 	while($row = $result->fetch_assoc()) {
-		$correctAnswers = "B, B, D, C, D, C, D, D, A, B, E, C, E, A, D, D, E, D, B, D, E, A, D, C, E";
+		$correctAnswers = "B, B, D, C, D, C, D, D, A, B, E, C, E, A, D, B, E, D, B, D, E, A, D, C, E";
 		$correctAnswers = str_split(str_replace(' ','', str_replace( ',', '', $correctAnswers )),1);
 		$answers = str_split(str_replace(' ','', str_replace( ',', '', $row["answers"] )),1);
 		$score=0;
@@ -30,7 +30,7 @@ if ($result->num_rows > 0 ) {   // output data of each row
 			if($correctNow === $answeredNow){$score++;}
 			$i++;
 		}
-	
+
         echo "<tr><td>". $row["name"]."</td><td>$score</td></tr>";
 }
 echo "</table>";
@@ -40,7 +40,7 @@ function sortTable(n) {
   table = document.getElementById("myTable");
   switching = true;
   //Set the sorting direction to ascending:
-  dir = "asc"; 
+  dir = "asc";
   /*Make a loop that will continue until
   no switching has been done:*/
   while (switching) {
@@ -78,7 +78,7 @@ function sortTable(n) {
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
       switching = true;
       //Each time a switch is done, increase this count by 1:
-      switchcount ++;      
+      switchcount ++;
     } else {
       /*If no switching has been done AND the direction is "asc",
       set the direction to "desc" and run the while loop again.*/

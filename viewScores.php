@@ -15,7 +15,7 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 // Check connection
 if ($conn->connect_error) {
     die("E_Connection_failed_" . $conn->connect_error);
-} 
+}
 
 $sql = "SELECT * FROM 2017_HALLOWEEN_AMC_8 WHERE name='$name'";
 $result = $conn->query($sql);
@@ -30,7 +30,7 @@ echo "<button style='width: 50%;' onclick='window.location.reload()' class='blac
 		if($row['showLeaderboard']==0){echo "
 			<p>You have chosen <b>NOT</b> to show your name on the leaderboard. To change this, you will need to either <a href='samyok@samyok.us'>email me</a> or PM me (techguy2). </p>";
 		}
-		$correctAnswers = "B, B, D, C, D, C, D, D, A, B, E, C, E, A, D, D, E, D, B, D, E, A, D, C, E";
+		$correctAnswers = "B, B, D, C, D, C, D, D, A, B, E, C, E, A, D, B, E, D, B, D, E, A, D, C, E";
 		$correctAnswers = str_split(str_replace(' ','', str_replace( ',', '', $correctAnswers )),1);
 		$answers = str_split(str_replace(' ','', str_replace( ',', '', $row["answers"] )),1);
 $score=0;
