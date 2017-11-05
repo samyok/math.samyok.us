@@ -62,7 +62,7 @@ if ($result->num_rows > 0 ) {   // output data of each row
 			if($correctNow === $answeredNow){$score++;}
 			$i++;
 		}
-
+    if($score<10){$score = "0".$score;}
         echo "<tr><td>". $row["name"]."</td><td>$score</td></tr>";
 }
 echo "</table>";
