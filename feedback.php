@@ -31,8 +31,10 @@ $result = $conn->query($sql);
 echo "<table style='color: black'><tr><th>Name</th><th>Passkey</th></tr>";
 if ($result->num_rows > 0) {
     // output data of each row
+	$ndata = 1;
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row['name']."</td><td><a href='user.php?user=".$row['PASSKEY']. "'>".$row['PASSKEY']. "</a></td></tr>";
+        echo "<tr><td>".$ndata."</td><td>".$row['name']."</td><td><a href='user.php?user=".$row['PASSKEY']. "'>".$row['PASSKEY']. "</a></td></tr>";
+	$ndata++;    
     }
 	if(isset($_GET['removeName'])){
 		$rname = $_GET['removeName'];
