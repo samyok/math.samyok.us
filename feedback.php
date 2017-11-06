@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
 	if(isset($_GET['removeName'])){
 		$rname = $_GET['removeName'];
 		
-$sql = "UPDATE 2017_HALLOWEEN_AMC_8 SET showLeaderboard=0 WHERE name='".$rname."'";
+$sql = "UPDATE 2017_HALLOWEEN_AMC_8 SET showLeaderboard=0 WHERE PASSKEY='".$rname."'";
 
 if ($conn->query($sql) === TRUE) {
     echo "<br>Record updated successfully";
