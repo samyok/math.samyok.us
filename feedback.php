@@ -28,7 +28,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM 2017_HALLOWEEN_AMC_8";
 $result = $conn->query($sql);
-echo "<table style='color: black'><tr><th>ID</th><th>Name</th><th>Passkey</th></tr>";
+echo "<table style='color: black; padding: 5px;'><tr><th style='color: black; padding: 5px;'>ID</th><th style='color: black; padding: 5px;'>Name</th><th style='color: black; padding: 5px;'>Passkey</th></tr>";
 if ($result->num_rows > 0) {
     // output data of each row
 	$ndata = 1;
