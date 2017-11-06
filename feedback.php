@@ -1,10 +1,11 @@
 <?php
-session_start();
+include "assets/php/common.php";
 if(isset($_GET['password'])){
 	$psw=$_GET['password'];
 	if($psw != "candyforallandallforcandy"){
 		exit();
 	}
+	echo $head;
 	echo "<h1>List of all reviews:</h1>";
 	$fbackfiles = glob("reviews/*-*");
 	foreach ($fbackfiles as $filenameforpsw){
@@ -24,11 +25,11 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM 2017_HALLOWEEN_AMC_8";
 $result = $conn->query($sql);
-
+echo "<table><tr><th>Name</th><th>Passkey</th></tr>";
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "Name: ".$row['name']." PASSKEY: <a href='user.php?user=".$row['PASSKEY']. "'>clicky</a><br>";
+        echo "<tr><td>".$row['name']."</td><td><a href='user.php?user=".$row['PASSKEY']. "'>".$row['PASSKEY']. "</a></td></tr>";
     }
 	if(isset($_GET['removeName'])){
 		$rname = $_GET['removeName'];
@@ -36,11 +37,11 @@ if ($result->num_rows > 0) {
 $sql = "UPDATE 2017_HALLOWEEN_AMC_8 SET showLeaderboard=0 WHERE name='".$rname."'";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
+    echo "<br>Record updated successfully";
 } else {
-    echo "Error updating record: " . $conn->error;
+    echo "<br>Error updating record: " . $conn->error;
 }}
-
+echo "</table>";
 } else {
     echo "0 results";
 }
